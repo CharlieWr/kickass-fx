@@ -11,8 +11,6 @@ function xhr(data, cb) {
 
     http.onreadystatechange = function() {//Call a function when the state changes.
         if(http.readyState == 4 && http.status == 200) {
-
-            console.log(http.responseText)
             cb(http.responseText)
         }
     }
@@ -28,6 +26,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     var requiredRate = document.getElementById('requiredRate');
     var button = document.getElementById('button');
     var number = document.getElementById('mobile');
+    window.chartData = JSON.parse(document.body.dataset.chartdata);
 
     function sortRate(val, opp) {
         var rate;
@@ -39,6 +38,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
 
         } else {
             rate = data[val][oppVal];
+            window.updateData(window.chartData[val][oppVal]);
         }
 
        requiredRate.value = rate;
@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', function(event) {
             console.log('Callback')
             console.log(responseText)
         });
-
 
     }, false);
 

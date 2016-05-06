@@ -105,6 +105,12 @@ function generateDates() {
   }
   return a;
 }
+function updateData(newdata) {
+
+    myLine.data.datasets[0].data = newdata;
+    myLine.update();
+
+}
 window.onload = function() {
   var chartEl = document.getElementById("chart1");
   var ctx = chartEl.getContext("2d");
