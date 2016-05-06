@@ -2,29 +2,35 @@ extends layout
 
 block content
     div.col-md-9.col-md-pull-3.bd-content
-        h1= title
-        p Welcome to #{title}
 
-        h1 Set Up A Curreny Alert
+        h2 Set Up A Curreny Alert
 
         form
-        fieldset
-            legend Select your desired currency
-                div.form-group
-                    label(for="from") From Currency
-                    select.form-control
-                        each country in availableCountries
-                            option(value=country.value)= country.symbol + ' ' + country.name
+            fieldset
+                legend Select your desired currency
+                    div.form-group
+                        label(for="from") From Currency
+                        select#from.form-control
+                            each country in availableCountries
+                                option(value=country.value)= country.symbol + ' ' + country.name
 
-                div.form-group
-                    label(for="from") To currency
-                    select.form-control
-                        each country in availableCountries
-                            option(value=country.value)= country.symbol + ' ' + country.name
+                    div.form-group
+                        label(for="to") To currency
+                        select#to.form-control
+                            each country in availableCountries
+                                option(value=country.value)= country.symbol + ' ' + country.name
+                    div.form-group
+                        label(for="requiredRate") Required Conversion rate
+                        input#requiredRate.form-control 
 
-                div.form-group
-                    label Required Conversion rate
-                    input.form-control 
+            fieldset
+                legend Your details
+                    div.form-group
+                        label(for="email") Email
+                        input#email.form-control 
 
+                    div.form-group
+                        label(for="mobile") Mobile
+                        input#mobile.form-control 
 
         button.btn.btn-default(type="submit") Submit

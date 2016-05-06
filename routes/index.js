@@ -4,25 +4,38 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    var availableCountries = [
-        {
-            name: 'united kingdom', 
-            value: 'British pounds', 
-            symbol : '£',
-            iso: 'gbg'
+    var availableCountries = [{
+            name: 'Austrailian', 
+            value: 'dollor', 
+            symbol : '$',
+            iso: 'eur'
         }, {
-            name: 'france', 
+            name: 'France', 
             value: 'euro', 
             symbol : '$',
             iso: 'eur'
-        }
-    ]
+        }, {
+            name: 'Nigeria',
+            value: 'naira',
+            symbol: '₦',
+            iso: 'NGA'
+        }, {
+            name: 'Philippines',
+            value: 'pesos',
+            symbol: 'PHP',
+            iso: 'PHL'
+        }, {
+            name: 'United Kingdom', 
+            value: 'british pounds', 
+            symbol : '£',
+            iso: 'gbg'
+        }]
 
 
 
 
   res.render('index', { 
-        title: 'Express',
+        title: 'World remit',
         availableCountries : availableCountries
     });
 });
