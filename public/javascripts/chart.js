@@ -1,7 +1,7 @@
 window.count = 0;
 Chart.defaults.global.pointHitDetectionRadius = 1;
 Chart.defaults.global.legend.display = false;
-Chart.defaults.global.defaultFontFamily = 'Open Sans';
+Chart.defaults.global.defaultFontFamily = 'Proxima Nova';
 Chart.defaults.global.elements.line.borderColor = 'rgba(39,170,224,.75)';
 Chart.defaults.global.elements.arc.backgroundColor = 'rgba(39,170,224,.25)';
 Chart.defaults.global.elements.point.radius = 4;
@@ -73,12 +73,9 @@ var randomScalingFactor = function() {
 var lineChartData = {
   labels: generateDates(),
   datasets: [{
-    backgroundColor: 'rgba(39,170,224,0)',
-    borderWidth: 2,
+    backgroundColor: 'rgba(39,170,224,1)',
+    borderWidth: 0,
     data: generateData(),
-    scale: {
-      position: top
-    },
     pointBackgroundColor: '#fff',
     pointColor: '#000',
     strokeColor: '#27AAE0',
@@ -103,19 +100,13 @@ function generateDates() {
 window.onload = function() {
   var chartEl = document.getElementById("chart1");
   window.myLine = new Chart(chartEl, {
-    type: 'line',
+    type: 'bar',
     data: lineChartData,
     options: {
       tooltips: {
         enabled: false,
         custom: customTooltips
-      },
-      yAxes: [{
-        display: false
-      }],
-      xAxes: [{
-        display: false
-      }]
+      }
     }
   });
 };
