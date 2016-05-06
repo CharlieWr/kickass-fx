@@ -37,6 +37,7 @@ body {
   font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
+  background-color: #f9f9f9;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -60,14 +61,19 @@ button.btn-default {
   background: #8dc73f;
   border: none;
 }
+.container {
+  border: 1px solid rgba(43, 53, 65, 0.1);
+  border-radius: 8px;
+  background-color: white;
+}
 input, select {
   border: 1px solid rgba(43, 53, 65, 0.15);
   border-radius: 3px;
   outline: 0;
   border-radius: 3px;
   font-size: 16px;
-  color: rgba(43, 53, 65, 0.6);
-  padding: 12px 16px;
+  color: rgba(43, 53, 65, 0.8);
+  padding: 14px 16px;
 }
 input.form-control {
 }
@@ -80,6 +86,7 @@ select {
   -webkit-appearance: none;
   background-color: white;
   width: 240px;
+  font-size: 16px;
 }
 select:focus {
   border-color: #27AAE0;

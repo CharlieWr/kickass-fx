@@ -73,7 +73,7 @@ var randomScalingFactor = function() {
 var lineChartData = {
   labels: generateDates(),
   datasets: [{
-    backgroundColor: 'rgba(39,170,224,.15)',
+    backgroundColor: 'rgba(39,170,224,0)',
     borderWidth: 2,
     data: generateData(),
     scale: {
