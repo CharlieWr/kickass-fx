@@ -1,0 +1,30 @@
+extends layout
+
+block content
+    div.col-md-9.col-md-pull-3.bd-content
+        h1= title
+        p Welcome to #{title}
+
+        h1 Set Up A Curreny Alert
+
+        form
+        fieldset
+            legend Select your desired currency
+                div.form-group
+                    label(for="from") From Currency
+                    select.form-control
+                        each country in availableCountries
+                            option(value=country.value)= country.symbol + ' ' + country.name
+
+                div.form-group
+                    label(for="from") To currency
+                    select.form-control
+                        each country in availableCountries
+                            option(value=country.value)= country.symbol + ' ' + country.name
+
+                div.form-group
+                    label Required Conversion rate
+                    input.form-control 
+
+
+        button.btn.btn-default(type="submit") Submit

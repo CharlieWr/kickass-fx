@@ -1,0 +1,26 @@
+/*
+    green : #8dc73f;
+
+
+*/
+
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+option {
+    text-transform: capitalize;
+}
+
+button.btn-default {
+
+    color: #fff;
+    background: #8dc73f;
+    font-weight: bold;
+}
