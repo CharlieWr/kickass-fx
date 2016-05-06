@@ -10,7 +10,7 @@ html
     include script.jade
     script(src='javascripts/main.js')
     
-  body(data-jsData=convertedData)
+  body(data-jsData=convertedData, data-chartData=chartData)
     div.container.max-width-3.mx-auto.p4
       include header.jade
       block content

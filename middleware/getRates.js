@@ -404,21 +404,33 @@ module.exports = {
         request('https://httpbin.org/get', function (error, response, body) {
           if (!error && response.statusCode == 200) {
 
+            var chartData = {
 
+            }
             var newData = {};
             
             data.forEach(function(currency, index) {
 
                 var rates = {};
 
+                chartData[currency.currency] = {};
+
                 currency.exchangeRates.forEach(function(rate) {
                     rates[rate.currency] = rate.conversionRate[0].rate.toFixed(4);
+
+                    chartData[currency.currency][rate.currency] = rate.conversionRate.map(function(r) {
+                        return r.rate.toFixed(4)
+                    });
+
+
                 });
 
                 newData[currency.currency] = rates;
-            });     
+                
+            });  
 
             res.locals.currentRates = newData;
+            res.locals.chartData = chartData;
             return next();
 
           } else {

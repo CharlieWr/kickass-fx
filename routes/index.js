@@ -52,7 +52,8 @@ router.get('/', getRates.getRates ,function(req, res, next) {
         availableCountries : availableCountries,
         currentRates: currentRates,
         currentHeadlineRate: currentHeadlineRate,
-        convertedData: JSON.stringify(currentRates)
+        convertedData: JSON.stringify(currentRates),
+        chartData: JSON.stringify(res.locals.chartData)
     });
 });
 
