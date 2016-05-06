@@ -24,22 +24,21 @@ block content
                                     else
                                         option(value=country.iso)= country.symbol + ' ' + country.name
 
-        div#canvas-holder1.my3
+        div#canvas-holder1.my4
             canvas#chart1
 
 
-        div.notification
+        div.notification.center.max-width-3.mx-auto
 
-            div.form-group
-                label(for="requiredRate") Required Conversion rate
-                input#requiredRate.form-control(value= currentHeadlineRate)
+            h3 Send me a notification when
+                input#requiredRate.form-control(value= currentHeadlineRate).mx1
+                span is exceeded
 
-            div.form-group
+            div.form-group.max-width-1.mx-auto
                 input#email.form-control(placeholder="Email address")
 
-            div.form-group
+            div.form-group.max-width-1.mx-auto
                 input#mobile.form-control(placeholder="Mobile number")
- 
 
-
-        button#button.px4.py2.btn.btn-default(type="submit") Submit
+            div.form-group.max-width-1.mx-auto
+              button#button.px4.py2.btn.btn-default(type="submit") Submit

@@ -30,7 +30,9 @@
   font-weight: bold;
   font-style: normal;
 }
-
+* {
+  box-sizing: border-box;
+}
 body {
   color: rgba(43, 53, 65, 0.6);
   padding: 50px;
@@ -46,6 +48,10 @@ h1,h2,h3,h4,h5,h6 {
 
 h1 {
   font-weight: 100;
+}
+
+h3 {
+  font-weight: normal;
 }
 
 a {
@@ -96,9 +102,25 @@ select:focus {
 }
 .select-wrapper:after {
   position: absolute;
-  right: 18px;
-  top: 11px;
+  right: 20px;
+  top: 14px;
   height: 6px;
   width: 6px;
+  pointer-events: none;
   content: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9Im5vIj8+Cjxzdmcgd2lkdGg9IjEycHgiIGhlaWdodD0iOHB4IiB2aWV3Qm94PSIwIDAgMTIgOCIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj4KICAgIDwhLS0gR2VuZXJhdG9yOiBTa2V0Y2ggMy43LjIgKDI4Mjc2KSAtIGh0dHA6Ly93d3cuYm9oZW1pYW5jb2RpbmcuY29tL3NrZXRjaCAtLT4KICAgIDx0aXRsZT5SZWN0YW5nbGUgNDgyIENvcHk8L3RpdGxlPgogICAgPGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+CiAgICA8ZGVmcz48L2RlZnM+CiAgICA8ZyBpZD0iUGFnZS0xIiBzdHJva2U9Im5vbmUiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBvcGFjaXR5PSIwLjYiPgogICAgICAgIDxwYXRoIGQ9Ik04Ljg5NTA4MzAzLDQuMjI0NDc4MzQgQzkuMDM0OTcyMzIsNC4xMDA1MDIzOCA5LjAzNDk3MjMyLDMuODk5NDk3NjIgOC44OTUwODMwMywzLjc3NTUyMTY2IEwzLjYxMTUwMDk0LC0wLjkwNzAxODAyNiBDMy40NzE2MTE2NCwtMS4wMzA5OTM5OSAzLjI0NDgwNjI3LC0xLjAzMDk5Mzk5IDMuMTA0OTE2OTcsLTAuOTA3MDE4MDI2IEMyLjk2NTAyNzY4LC0wLjc4MzA0MjA2IDIuOTY1MDI3NjgsLTAuNTgyMDM3MzA1IDMuMTA0OTE2OTcsLTAuNDU4MDYxMzM5IEw4LjM4ODQ5OTA2LDQuMjI0NDc4MzQgTDguMzg4NDk5MDYsMy43NzU1MjE2NiBMMy4xMDQ5MTY5Nyw4LjQ1ODA2MTM0IEMyLjk2NTAyNzY4LDguNTgyMDM3MyAyLjk2NTAyNzY4LDguNzgzMDQyMDYgMy4xMDQ5MTY5Nyw4LjkwNzAxODAzIEMzLjI0NDgwNjI3LDkuMDMwOTkzOTkgMy40NzE2MTE2NCw5LjAzMDk5Mzk5IDMuNjExNTAwOTQsOC45MDcwMTgwMyBMOC44OTUwODMwMyw0LjIyNDQ3ODM0IFoiIGlkPSJSZWN0YW5nbGUtNDgyLUNvcHkiIHN0cm9rZT0iIzI3QUFFMCIgZmlsbD0iIzI3QUFFMCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNi4wMDAwMDAsIDQuMDAwMDAwKSByb3RhdGUoLTI3MC4wMDAwMDApIHRyYW5zbGF0ZSgtNi4wMDAwMDAsIC00LjAwMDAwMCkgIj48L3BhdGg+CiAgICA8L2c+Cjwvc3ZnPg==');
+}
+
+.notification input,
+.notification button {
+  width: 100%;
+}
+
+.notification .form-group {
+  margin-bottom: 8px;
+}
+
+input#requiredRate {
+  width: 100px;
+  display: inline-block;
+  font-weight: normal;
 }
