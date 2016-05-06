@@ -1,8 +1,13 @@
 var express = require('express');
 var router = express.Router();
+var getRates = require('../middleware/getRates');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', getRates.getRates ,function(req, res, next) {
+
+
+    console.log(getRates)
+
 
     var availableCountries = [{
             name: 'Austrailian', 
