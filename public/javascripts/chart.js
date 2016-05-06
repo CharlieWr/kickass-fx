@@ -1,4 +1,5 @@
 window.count = 0;
+var gradient;
 var currentMousePos = { x: -1, y: -1 };
 $(document).mousemove(function(event) {
     currentMousePos.x = event.pageX;
@@ -8,15 +9,13 @@ Chart.defaults.global.pointHitDetectionRadius = 1;
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.defaultFontFamily = 'Proxima Nova';
 Chart.defaults.global.elements.line.borderColor = 'rgba(39,170,224,.75)';
-Chart.defaults.global.elements.line.borderWidth = 3;
 Chart.defaults.global.elements.arc.backgroundColor = 'rgba(39,170,224,.25)';
-Chart.defaults.global.elements.point.radius = 4;
-Chart.defaults.global.elements.point.borderWidth = 3;
+Chart.defaults.global.elements.point.radius = 3;
 Chart.defaults.global.elements.point.backgroundColor = '#fff';
 Chart.defaults.global.elements.point.hoverBackgroundColor = '#fff';
-Chart.defaults.global.elements.point.borderColor = 'rgba(39,170,224,.75)';
+Chart.defaults.global.elements.point.borderColor = 'rgba(39,170,224,.2)';
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-var days = 14;
+var days = 28;
 var customTooltips = function(tooltip) {
   // Tooltip Element
   var tooltipEl = $('#chartjs-tooltip');
@@ -70,23 +69,25 @@ var customTooltips = function(tooltip) {
     fontFamily: tooltip._fontFamily,
     fontSize: tooltip.fontSize,
     fontStyle: tooltip._fontStyle,
-    padding: tooltip.yPadding + 'px ' + tooltip.xPadding + 'px',
   });
 };
 var randomScalingFactor = function() {
-  return Math.round(Math.random() * 100);
+  return Math.round(Math.random() * 5 + 60);
 };
-var lineChartData = {
-  labels: generateDates(),
-  datasets: [{
-    backgroundColor: 'rgba(39,170,224,0.15)',
-    borderWidth: 1,
-    data: generateData(),
-    pointBackgroundColor: '#fff',
-    pointColor: '#000',
-    strokeColor: '#27AAE0',
-  }]
-};
+function lineChartData() {
+  console.log(gradient);
+  return {
+    labels: generateDates(),
+    datasets: [{
+      backgroundColor: gradient,
+      borderWidth: 2,
+      data: generateData(),
+      pointBackgroundColor: '#fff',
+      pointColor: '#000',
+      strokeColor: '#27AAE0',
+    }]
+  };
+}
 function generateData() {
   var a = [];
   for (var i=0;i<days;i++) {
@@ -105,13 +106,41 @@ function generateDates() {
 }
 window.onload = function() {
   var chartEl = document.getElementById("chart1");
+  var ctx = chartEl.getContext("2d");
+  gradient = ctx.createLinearGradient(0,0,0,250);
+  gradient.addColorStop(0,'rgba(39,170,224,0.15)');
+  gradient.addColorStop(1,'rgba(39,170,224,0.05)');
+
   window.myLine = new Chart(chartEl, {
     type: 'line',
-    data: lineChartData,
+    data: lineChartData(),
     options: {
       tooltips: {
         enabled: false,
         custom: customTooltips
+      },
+      scales: {
+        xAxes: [{
+          gridLines: {
+            display: false,
+            color: 'rgba(39,170,224,0.05)'
+          },
+          ticks: {
+            display: false
+          }
+        }],
+        yAxes: [{
+          gridLines: {
+            color: 'rgba(43,54,65,0.1)'
+          },
+          ticks: {
+            fontColor: 'rgba(43,53,65,0.4)',
+            autoSkip: true,
+            maxTicksLimit: 5,
+            suggestedMin: 50,
+            suggestedMax: 70
+          }
+        }]
       }
     }
   });
