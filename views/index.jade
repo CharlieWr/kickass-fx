@@ -9,9 +9,9 @@ block content
                     select#from.form-control
                        each country in availableCountries
                                 if country.iso === selectedFrom
-                                    option(value=country.value, selected=true)= country.symbol + ' ' + country.name
+                                    option(value=country.iso, selected=true)= country.symbol + ' ' + country.name
                                 else
-                                    option(value=country.value)= country.symbol + ' ' + country.name
+                                    option(value=country.iso)= country.symbol + ' ' + country.name
 
                 div.form-group.mx2 to
 
@@ -20,9 +20,9 @@ block content
                     select#to.form-control
                         each country in availableCountries
                                     if country.iso === selectedTo
-                                        option(value=country.value, selected=true)= country.symbol + ' ' + country.name
+                                        option(value=country.iso, selected=true)= country.symbol + ' ' + country.name
                                     else
-                                        option(value=country.value)= country.symbol + ' ' + country.name
+                                        option(value=country.iso)= country.symbol + ' ' + country.name
 
         div#canvas-holder1.my3
             canvas#chart1
@@ -32,12 +32,14 @@ block content
 
             div.form-group
                 label(for="requiredRate") Required Conversion rate
-                input.form-control(value= currentHeadlineRate)
+                input#requiredRate.form-control(value= currentHeadlineRate)
 
             div.form-group
                 input#email.form-control(placeholder="Email address")
 
             div.form-group
                 input#mobile.form-control(placeholder="Mobile number")
+ 
 
-        button.px4.py2.btn.btn-default(type="submit") Submit
+
+        button#button.px4.py2.btn.btn-default(type="submit") Submit
