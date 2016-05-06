@@ -1,3 +1,5 @@
+var request = require('request');
+
 
 /*
 
@@ -59,22 +61,43 @@ var data = [{
 module.exports = {
     getRates: function(req, res, next){
 
-        var newData = {};
-        
-        data.forEach(function(currency, index) {
+        request('https://httpbin.org/get', function (error, response, body) {
+          if (!error && response.statusCode == 200) {
 
-            var rates = {};
 
-            currency.exchangeRates.forEach(function(rate) {
+            var newData = {};
+            
+            data.forEach(function(currency, index) {
 
-                rates[rate.currency] = rate.conversionRate;
-            });
+                var rates = {};
 
-            newData[currency.currency] = rates;
-        });     
+                currency.exchangeRates.forEach(function(rate) {
 
-        res.locals.currentRates = newData;
-        next();
+                    rates[rate.currency] = rate.conversionRate;
+                });
+
+                newData[currency.currency] = rates;
+            });     
+
+            res.locals.currentRates = newData;
+            return next();
+
+
+
+
+          } else {
+
+            console.log('Bleeding errr')
+            return next()
+
+
+
+          }
+        })
+
+
+
+
 
     }
 }

@@ -1,3 +1,28 @@
+function xhr(data, cb) {
+
+
+    var http = new XMLHttpRequest();
+    var url = "https://httpbin.org/post";
+    var params = JSON.stringify(data);
+    http.open("POST", url, true);
+
+    //Send the proper header information along with the request
+    http.setRequestHeader("Content-type", "application/json");
+
+    http.onreadystatechange = function() {//Call a function when the state changes.
+        if(http.readyState == 4 && http.status == 200) {
+
+            console.log(http.responseText)
+            cb(http.responseText)
+        }
+    }
+    http.send(params);
+
+}
+
+
+
+
 document.addEventListener('DOMContentLoaded', function(event) {
 
     var toSelect = document.getElementById('to');
@@ -30,7 +55,11 @@ document.addEventListener('DOMContentLoaded', function(event) {
             RateThreshold: requiredRate.value
         }
 
-        console.log(sendData)
+        xhr(data, function(responseText) {
+            console.log('Callback')
+            console.log(responseText)
+
+        });
 
 
     }, false);
