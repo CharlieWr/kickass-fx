@@ -66,7 +66,7 @@ var randomScalingFactor = function() {
 var lineChartData = {
   labels: generateDates(),
   datasets: [{
-    label: "My First dataset",
+    label: "",
     data: generateData(),
     backgroundColor: 'transparent',
     strokeColor: '#27AAE0',
@@ -83,13 +83,9 @@ function generateData() {
 function generateDates() {
   var a = [];
   for (i=days;i>0;i--) {
-    if (i%4==1) {
-      var d = new Date();
-      d.setDate(d.getDate()-i);
-      a.push(months[d.getUTCMonth()]+' '+d.getUTCDate());
-    } else {
-      a.push('');
-    }
+    var d = new Date();
+    d.setDate(d.getDate()-i);
+    a.push(months[d.getUTCMonth()]+' '+d.getUTCDate());
   }
   return a;
 }
