@@ -7,23 +7,30 @@ block content
                 div.form-group
                     label(for="from") From Currency
                     select#from.form-control
-                        each country in availableCountries
-                            option(value=country.value)= country.symbol + ' ' + country.name
+                       each country in availableCountries
+                                if country.iso === selectedFrom
+                                    option(value=country.value, selected=true)= country.symbol + ' ' + country.name
+                                else
+                                    option(value=country.value)= country.symbol + ' ' + country.name
 
                 div.form-group
                     label(for="to") To currency
                     select#to.form-control
                         each country in availableCountries
-                            option(value=country.value)= country.symbol + ' ' + country.name
+                                    if country.iso === selectedTo
+                                        option(value=country.value, selected=true)= country.symbol + ' ' + country.name
+                                    else
+                                        option(value=country.value)= country.symbol + ' ' + country.name
 
         div#canvas-holder1
             canvas#chart1
+
 
         div.notification
 
             div.form-group
                 label(for="requiredRate") Required Conversion rate
-                input#requiredRate.form-control
+                input.form-control(value= currentHeadlineRate)
 
             div.form-group
                 label(for="email") Email

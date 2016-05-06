@@ -4,14 +4,13 @@ var getRates = require('../middleware/getRates');
 
 /* GET home page. */
 router.get('/', getRates.getRates ,function(req, res, next) {
-
-
-    console.log(getRates)
-
+    var selectedFrom = 'gbp';
+    var selectedTo = 'phl';
+    var currentHeadlineRate = '';
 
     var availableCountries = [{
             name: 'Austrailian', 
-            value: 'dollor', 
+            value: 'dollar', 
             symbol : '$',
             iso: 'eur'
         }, {
@@ -23,25 +22,45 @@ router.get('/', getRates.getRates ,function(req, res, next) {
             name: 'Nigeria',
             value: 'naira',
             symbol: '₦',
-            iso: 'NGA'
+            iso: 'nga'
         }, {
             name: 'Philippines',
             value: 'pesos',
             symbol: 'PHP',
-            iso: 'PHL'
+            iso: 'phl'
         }, {
             name: 'United Kingdom', 
             value: 'british pounds', 
             symbol : '£',
-            iso: 'gbg'
-        }]
+            iso: 'gbp'
+        }];
+
+        var currentRates = res.locals.currentRates;
+
+        if(currentRates[selectedFrom.toUpperCase()]) {
+
+            // console.log(currentRates[selectedFrom.toUpperCase()])
+            // console.log(selectedTo.toUpperCase())
+            // console.log(currentRates[selectedFrom.toUpperCase()][selectedTo.toUpperCase()])
+
+             if(currentRates[selectedFrom.toUpperCase()][selectedTo.toUpperCase()]) {
+
+                 currentHeadlineRate = currentRates[selectedFrom.toUpperCase()][selectedTo.toUpperCase()];
+                 console.log(currentHeadlineRate)
+             }
+        }
 
 
 
 
-  res.render('index', { 
+
+  res.render('index', {
+        selectedFrom: selectedFrom,
+        selectedTo: selectedTo,
         title: 'World remit',
-        availableCountries : availableCountries
+        availableCountries : availableCountries,
+        currentRates: res.locals.currentRates,
+        currentHeadlineRate: currentHeadlineRate
     });
 });
 
