@@ -1,11 +1,43 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("/fonts/ProximaNova-Light/ProximaNova-Light.eot");
+  src: url("/fonts/ProximaNova-Light/ProximaNova-Light.eot?#iefix") format('embedded-opentype'),
+       url("/fonts/ProximaNova-Light/ProximaNova-Light.woff") format('woff'),
+       url("/fonts/ProximaNova-Light/ProximaNova-Light.ttf") format('truetype'),
+       url("/fonts/ProximaNova-Light/ProximaNova-Light.svg") format('svg');
+  font-weight: light;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("/fonts/ProximaNova-Regular/ProximaNova-Regular.eot");
+  src: url("/fonts/ProximaNova-Regular/ProximaNova-Regular.eot?#iefix") format('embedded-opentype'),
+       url("/fonts/ProximaNova-Regular/ProximaNova-Regular.woff") format('woff'),
+       url("/fonts/ProximaNova-Regular/ProximaNova-Regular.ttf") format('truetype'),
+       url("/fonts/ProximaNova-Regular/ProximaNova-Regular.svg") format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Proxima Nova';
+  src: url("/fonts/ProximaNova-Bold/ProximaNova-Bold.eot");
+  src: url("/fonts/ProximaNova-Bold/ProximaNova-Bold.eot?#iefix") format('embedded-opentype'),
+       url("/fonts/ProximaNova-Bold/ProximaNova-Bold.woff") format('woff'),
+       url("/fonts/ProximaNova-Bold/ProximaNova-Bold.ttf") format('truetype'),
+       url("/fonts/ProximaNova-Bold/ProximaNova-Bold.svg") format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
 
 body {
   color: rgba(43, 53, 65, 0.6);
   padding: 50px;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  font-family: "Proxima Nova", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   text-rendering: geometricPrecision;
+  background-color: #f9f9f9;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -29,14 +61,19 @@ button.btn-default {
   background: #8dc73f;
   border: none;
 }
+.container {
+  border: 1px solid rgba(43, 53, 65, 0.1);
+  border-radius: 8px;
+  background-color: white;
+}
 input, select {
   border: 1px solid rgba(43, 53, 65, 0.15);
   border-radius: 3px;
   outline: 0;
   border-radius: 3px;
   font-size: 16px;
-  color: rgba(43, 53, 65, 0.6);
-  padding: 12px 16px;
+  color: rgba(43, 53, 65, 0.8);
+  padding: 14px 16px;
 }
 input.form-control {
 }
@@ -49,6 +86,7 @@ select {
   -webkit-appearance: none;
   background-color: white;
   width: 240px;
+  font-size: 16px;
 }
 select:focus {
   border-color: #27AAE0;

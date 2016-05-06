@@ -9,7 +9,10 @@ html
     script(src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.0/Chart.bundle.min.js')
     include script.jade
     script(src='javascripts/main.js')
+    
   body(data-jsData=convertedData)
-    include header.jade
-    block content
-    script(src='javascripts/chart.js')
+    div.container.max-width-3.mx-auto.p4
+      include header.jade
+      block content
+      script(src='javascripts/chart.js')
+
