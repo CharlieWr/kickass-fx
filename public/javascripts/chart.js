@@ -1,6 +1,7 @@
 window.count = 0;
 Chart.defaults.global.pointHitDetectionRadius = 1;
 Chart.defaults.global.legend.display = false;
+Chart.defaults.global.defaultFontFamily = 'Open Sans';
 Chart.defaults.global.elements.line.borderColor = 'rgba(39,170,224,.75)';
 Chart.defaults.global.elements.arc.backgroundColor = 'rgba(39,170,224,.25)';
 Chart.defaults.global.elements.point.radius = 4;
@@ -109,11 +110,9 @@ window.onload = function() {
         enabled: false,
         custom: customTooltips
       },
-      scales: {
-        gridLines: {
-          display: false
-        }
-      }
+      yAxes: [{
+        display: false
+      }]
     }
   });
 };
