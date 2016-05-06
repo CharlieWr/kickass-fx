@@ -14,49 +14,49 @@ var data = [{
         "currency":"GBP",
         "exchangeRates":[
             {"currency":"EUR","conversionRate":1.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"PHL","conversionRate":6.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"NGA","conversionRate":3.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"AUS","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"}
+            {"currency":"PHP","conversionRate":6.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"NGN","conversionRate":3.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"AUD","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"}
         ]
     },
 
     {
-        "currency":"PHL",
+        "currency":"PHP",
         "exchangeRates":[
             {"currency":"EUR","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"NGA","conversionRate":1.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"AUS","conversionRate":3.3,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"NGN","conversionRate":1.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"AUD","conversionRate":3.3,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
             {"currency":"GBP","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"}
     ]
 },  {
         "currency":"EUR",
         "exchangeRates":[
-            {"currency":"PHL","conversionRate":2.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"NGA","conversionRate":1.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"PHP","conversionRate":2.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"NGN","conversionRate":1.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"AUD","conversionRate":3.3,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"GBP","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"}
+    ]
+},
+{
+        "currency":"NGN",
+        "exchangeRates":[
+            {"currency":"EUR","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"PHP","conversionRate":2.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
             {"currency":"AUS","conversionRate":3.3,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
             {"currency":"GBP","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"}
     ]
 },
 {
-        "currency":"NGA",
+        "currency":"AUD",
         "exchangeRates":[
             {"currency":"EUR","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"PHL","conversionRate":2.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"AUS","conversionRate":3.3,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"GBP","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"}
-    ]
-},
-{
-        "currency":"AUS",
-        "exchangeRates":[
-            {"currency":"EUR","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"PHL","conversionRate":2.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
-            {"currency":"NGA","conversionRate":1.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"PHP","conversionRate":2.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
+            {"currency":"NGN","conversionRate":1.5,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"},
             {"currency":"GBP","conversionRate":1.2,"validFrom":"2016-05-06T00:00:00.0000000+01:00","validTo":"2016-05-07T00:00:00.0000000+01:00"}
     ]
 }
 
-
+ 
 ]
 module.exports = {
     getRates: function(req, res, next){

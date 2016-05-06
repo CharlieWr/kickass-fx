@@ -17,10 +17,7 @@ function xhr(data, cb) {
         }
     }
     http.send(params);
-
 }
-
-
 
 
 document.addEventListener('DOMContentLoaded', function(event) {
@@ -30,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function(event) {
     var data = JSON.parse(document.body.dataset.jsdata);
     var requiredRate = document.getElementById('requiredRate');
     var button = document.getElementById('button');
+    var number = document.getElementById('mobile');
 
     function sortRate(val, opp) {
         var rate;
@@ -52,13 +50,13 @@ document.addEventListener('DOMContentLoaded', function(event) {
         var sendData = {
             FromCurrency: fromSelect[fromSelect.selectedIndex].value,
             ToCurrency: toSelect[toSelect.selectedIndex].value,
-            RateThreshold: requiredRate.value
+            RateThreshold: requiredRate.value,
+            Phonenumber: mobile.value
         }
 
         xhr(data, function(responseText) {
             console.log('Callback')
             console.log(responseText)
-
         });
 
 

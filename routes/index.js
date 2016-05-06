@@ -5,14 +5,14 @@ var getRates = require('../middleware/getRates');
 /* GET home page. */
 router.get('/', getRates.getRates ,function(req, res, next) {
     var selectedFrom = 'GBP';
-    var selectedTo = 'PHL';
+    var selectedTo = 'PHP';
     var currentHeadlineRate = '';
 
     var availableCountries = [{
             name: 'Australian Dollar',
             value: 'dollar',
             symbol : '$',
-            iso: 'AUS'
+            iso: 'AUD'
         }, {
             name: 'Euro',
             value: 'euro',
@@ -22,12 +22,12 @@ router.get('/', getRates.getRates ,function(req, res, next) {
             name: 'Nigeria Naira',
             value: 'naira',
             symbol: '₦',
-            iso: 'NGA'
+            iso: 'NGN'
         }, {
             name: 'Philippines Peso',
             value: 'pesos',
             symbol: 'PHP',
-            iso: 'PHL'
+            iso: 'PHP'
         }, {
             name: 'Great British Pound',
             value: 'british pounds',
