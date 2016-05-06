@@ -4,10 +4,12 @@
 
 */
 
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
 
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 a {
@@ -22,5 +24,6 @@ button.btn-default {
 
     color: #fff;
     background: #8dc73f;
-    font-weight: bold;
+    border: none;
+
 }

@@ -1,11 +1,11 @@
 extends layout
 
 block content
-    div.col-md-9.col-md-pull-3.bd-content
+    div
         h1= title
         p Welcome to #{title}
 
-        h1 Set Up A Curreny Alert
+        h1 Set Up A Currency Alert
 
         form
         fieldset
@@ -24,7 +24,7 @@ block content
 
                 div.form-group
                     label Required Conversion rate
-                    input.form-control 
+                    input.form-control
 
 
-        button.btn.btn-default(type="submit") Submit
+        button.px4.py2.btn.btn-default(type="submit") Submit
