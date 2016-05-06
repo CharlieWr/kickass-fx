@@ -2,10 +2,10 @@ extends layout
 
 block content
     div.max-width-3.mx-auto
-        div.select-currency
+        div.select-currency.mx-auto.center
             form
-                div.form-group
-                    label(for="from") From Currency
+                div.form-group.select-wrapper
+                    label(for="from")
                     select#from.form-control
                        each country in availableCountries
                                 if country.iso === selectedFrom
@@ -13,8 +13,10 @@ block content
                                 else
                                     option(value=country.value)= country.symbol + ' ' + country.name
 
-                div.form-group
-                    label(for="to") To currency
+                div.form-group.mx2 to
+
+                div.form-group.select-wrapper
+                    label(for="to")
                     select#to.form-control
                         each country in availableCountries
                                     if country.iso === selectedTo
@@ -22,7 +24,7 @@ block content
                                     else
                                         option(value=country.value)= country.symbol + ' ' + country.name
 
-        div#canvas-holder1
+        div#canvas-holder1.my3
             canvas#chart1
 
 
@@ -33,11 +35,9 @@ block content
                 input.form-control(value= currentHeadlineRate)
 
             div.form-group
-                label(for="email") Email
-                input#email.form-control
+                input#email.form-control(placeholder="Email address")
 
             div.form-group
-                label(for="mobile") Mobile
-                input#mobile.form-control
+                input#mobile.form-control(placeholder="Mobile number")
 
         button.px4.py2.btn.btn-default(type="submit") Submit

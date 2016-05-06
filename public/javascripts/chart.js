@@ -112,6 +112,9 @@ window.onload = function() {
       },
       yAxes: [{
         display: false
+      }],
+      xAxes: [{
+        display: false
       }]
     }
   });

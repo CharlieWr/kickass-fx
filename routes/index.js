@@ -9,28 +9,28 @@ router.get('/', getRates.getRates ,function(req, res, next) {
     var currentHeadlineRate = '';
 
     var availableCountries = [{
-            name: 'Austrailian', 
-            value: 'dollar', 
+            name: 'Australian Dollar',
+            value: 'dollar',
             symbol : '$',
             iso: 'eur'
         }, {
-            name: 'France', 
-            value: 'euro', 
+            name: 'Euro',
+            value: 'euro',
             symbol : '$',
             iso: 'eur'
         }, {
-            name: 'Nigeria',
+            name: 'Nigeria Naira',
             value: 'naira',
             symbol: '₦',
             iso: 'nga'
         }, {
-            name: 'Philippines',
+            name: 'Philippines Peso',
             value: 'pesos',
             symbol: 'PHP',
             iso: 'phl'
         }, {
-            name: 'United Kingdom', 
-            value: 'british pounds', 
+            name: 'Great British Pound',
+            value: 'british pounds',
             symbol : '£',
             iso: 'gbp'
         }];
