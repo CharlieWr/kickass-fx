@@ -1,11 +1,17 @@
 window.count = 0;
+var currentMousePos = { x: -1, y: -1 };
+$(document).mousemove(function(event) {
+    currentMousePos.x = event.pageX;
+    currentMousePos.y = event.pageY;
+});
 Chart.defaults.global.pointHitDetectionRadius = 1;
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.defaultFontFamily = 'Proxima Nova';
 Chart.defaults.global.elements.line.borderColor = 'rgba(39,170,224,.75)';
+Chart.defaults.global.elements.line.borderWidth = 3;
 Chart.defaults.global.elements.arc.backgroundColor = 'rgba(39,170,224,.25)';
 Chart.defaults.global.elements.point.radius = 4;
-Chart.defaults.global.elements.point.borderWidth = 2;
+Chart.defaults.global.elements.point.borderWidth = 3;
 Chart.defaults.global.elements.point.backgroundColor = '#fff';
 Chart.defaults.global.elements.point.hoverBackgroundColor = '#fff';
 Chart.defaults.global.elements.point.borderColor = 'rgba(39,170,224,.75)';
@@ -59,8 +65,8 @@ var customTooltips = function(tooltip) {
   tooltipEl.css({
     opacity: 1,
     width: tooltip.width ? (tooltip.width + 'px') : 'auto',
-    left: position.left + tooltip.x + 'px',
-    top: position.top + top + 'px',
+    left: currentMousePos.x + 'px',
+    top: currentMousePos.y + 'px',
     fontFamily: tooltip._fontFamily,
     fontSize: tooltip.fontSize,
     fontStyle: tooltip._fontStyle,
@@ -73,8 +79,8 @@ var randomScalingFactor = function() {
 var lineChartData = {
   labels: generateDates(),
   datasets: [{
-    backgroundColor: 'rgba(39,170,224,1)',
-    borderWidth: 0,
+    backgroundColor: 'rgba(39,170,224,0.15)',
+    borderWidth: 1,
     data: generateData(),
     pointBackgroundColor: '#fff',
     pointColor: '#000',
@@ -100,7 +106,7 @@ function generateDates() {
 window.onload = function() {
   var chartEl = document.getElementById("chart1");
   window.myLine = new Chart(chartEl, {
-    type: 'bar',
+    type: 'line',
     data: lineChartData,
     options: {
       tooltips: {
