@@ -138,8 +138,6 @@ window.onload = function() {
             fontColor: 'rgba(43,53,65,0.4)',
             autoSkip: true,
             maxTicksLimit: 5,
-            suggestedMin: 50,
-            suggestedMax: 70
           }
         }]
       }
