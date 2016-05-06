@@ -1,15 +1,19 @@
-/*
-    green : #8dc73f;
-
-
-*/
-
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600,300);
 
 body {
+  color: rgba(43, 53, 65, 0.6);
   padding: 50px;
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  color: rgba(43, 53, 65, 1);
+}
+
+h1 {
+  font-weight: 500;
 }
 
 a {
@@ -17,13 +21,14 @@ a {
 }
 
 option {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 button.btn-default {
-
-    color: #fff;
-    background: #8dc73f;
-    border: none;
+  color: #fff;
+  background: #8dc73f;
+  border: none;
+}
+input["text"] {
 
 }

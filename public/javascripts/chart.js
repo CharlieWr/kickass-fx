@@ -2,6 +2,12 @@ window.count = 0;
 Chart.defaults.global.pointHitDetectionRadius = 1;
 Chart.defaults.global.legend.display = false;
 Chart.defaults.global.elements.line.borderColor = 'rgba(39,170,224,.75)';
+Chart.defaults.global.elements.arc.backgroundColor = 'rgba(39,170,224,.25)';
+Chart.defaults.global.elements.point.radius = 4;
+Chart.defaults.global.elements.point.borderWidth = 2;
+Chart.defaults.global.elements.point.backgroundColor = '#fff';
+Chart.defaults.global.elements.point.hoverBackgroundColor = '#fff';
+Chart.defaults.global.elements.point.borderColor = 'rgba(39,170,224,.75)';
 var months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 var days = 14;
 var customTooltips = function(tooltip) {
@@ -66,11 +72,15 @@ var randomScalingFactor = function() {
 var lineChartData = {
   labels: generateDates(),
   datasets: [{
-    label: "",
+    backgroundColor: 'rgba(39,170,224,.15)',
+    borderWidth: 2,
     data: generateData(),
-    backgroundColor: 'transparent',
+    scale: {
+      position: top
+    },
+    pointBackgroundColor: '#fff',
+    pointColor: '#000',
     strokeColor: '#27AAE0',
-    pointColor: '#000'
   }]
 };
 function generateData() {
